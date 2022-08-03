@@ -8,9 +8,17 @@ require("./config")(app);
 
 
 // 👇 MIDDLEWARE MISSING
-const allRoutes = require("./routes");
-app.use("/api", allRoutes);
+
+const indexRoutes = require('./routes/index.routes')
+app.use("/", indexRoutes)
+
+const phoneRoutes = require('./routes/phone.routes')
+app.use("/phones", phoneRoutes)
 
 
 
 module.exports = app;
+
+
+
+
